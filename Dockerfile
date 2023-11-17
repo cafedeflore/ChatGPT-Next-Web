@@ -2,6 +2,8 @@ FROM node:18-alpine AS base
 
 FROM base AS deps
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+
 RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
