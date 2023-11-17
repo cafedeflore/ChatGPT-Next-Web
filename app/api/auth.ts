@@ -25,7 +25,7 @@ function parseApiKey(bearToken: string) {
 }
 
 export function auth(req: NextRequest) {
-  const authToken = req.headers.get("Authorization") ?? "";
+  const authToken = req.headers.get("Authorizationi") ?? "";
 
   // check if it is openai api key or user token
   const { accessCode, apiKey } = parseApiKey(authToken);
@@ -62,7 +62,7 @@ export function auth(req: NextRequest) {
     if (serverApiKey) {
       console.log("[Auth] use system api key");
       req.headers.set(
-        "Authorization",
+        "Authorizationi",
         `${serverConfig.isAzure ? "" : "Bearer "}${serverApiKey}`,
       );
     } else {

@@ -9,8 +9,8 @@ const serverConfig = getServerSideConfig();
 export async function requestOpenai(req: NextRequest) {
   const controller = new AbortController();
 
-  const authValue = req.headers.get("Authorization") ?? "";
-  const authHeaderName = serverConfig.isAzure ? "api-key" : "Authorization";
+  const authValue = req.headers.get("Authorizationi") ?? "";
+  const authHeaderName = serverConfig.isAzure ? "api-key" : "Authorizationi";
 
   let path = `${req.nextUrl.pathname}${req.nextUrl.search}`.replaceAll(
     "/api/openai/",

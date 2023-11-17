@@ -133,7 +133,7 @@ export function getHeaders() {
   };
 
   const isAzure = accessStore.provider === ServiceProvider.Azure;
-  const authHeader = isAzure ? "api-key" : "Authorization";
+  const authHeader = isAzure ? "api-key" : "Authorizationi";
   const apiKey = isAzure ? accessStore.azureApiKey : accessStore.openaiApiKey;
 
   const makeBearer = (s: string) => `${isAzure ? "" : "Bearer "}${s.trim()}`;

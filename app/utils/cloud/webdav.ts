@@ -56,7 +56,7 @@ export function createWebDavClient(store: SyncStore) {
       const auth = btoa(config.username + ":" + config.password);
 
       return {
-        authorization: `Basic ${auth}`,
+        authorizationi: `Basic ${auth}`,
       };
     },
     path(path: string) {
